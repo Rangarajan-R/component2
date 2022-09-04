@@ -4,12 +4,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.tweetapp.configuration.ProducerService;
 import com.tweetapp.model.Reply;
 import com.tweetapp.model.Tweet;
 import com.tweetapp.model.User;
@@ -24,10 +22,6 @@ public class TweetService {
 	
 	@Autowired
 	LoginRepository loginRepository;
-	
-	@Autowired
-	ProducerService producerService;
-	
 	
 	public List<Tweet> getAllTweets() {
 		
@@ -64,7 +58,6 @@ public class TweetService {
 		
 		Tweet tweets = tweetRepository.save(tweet);	
 		
-		this.producerService.sendMessages("users", tweet.toString());
 		return tweets.getId();
 	}
 	

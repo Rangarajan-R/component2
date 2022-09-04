@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tweetapp.configuration.ProducerService;
 import com.tweetapp.model.Reply;
 import com.tweetapp.model.Tweet;
 import com.tweetapp.service.TweetService;
